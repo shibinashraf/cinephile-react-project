@@ -5,21 +5,13 @@ import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 
 const API_URL = "http://www.omdbapi.com?apikey=6f606aff";
-const movie1 = {
-  Title: "Superman Returns",
-  Year: "2006",
-  imdbID: "tt0348150",
-  Type: "movie",
-  Poster:
-    "https://m.media-amazon.com/images/M/MV5BNDUzZGRhNzktYTZkMC00YWFiLTljMDEtMTk2OWJhYzAyYmY2XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
-};
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies({ searchTerm });
   }, []);
 
   const searchMovies = async (title) => {
